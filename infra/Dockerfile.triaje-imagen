@@ -1,0 +1,20 @@
+FROM ds-base
+
+# Creating container for EDA
+
+WORKDIR /content/drive/MyDrive/vets_complutense
+
+RUN export PATH=$PATH:/home/triaje
+RUN su triaje
+RUN echo export PATH=$PATH:/home/triaje/.local/bin>>~/.bashrc
+RUN echo export MLFLOW_TRACKING_URI=/Projetos_dev/vets/vets-complutense/ops/mlflow>>~/.bashrc
+
+RUN pip install mlflow
+RUN pip install jupyterlab
+RUN pip install pandas
+RUN pip install matplotlib
+RUN pip install imageio
+RUN pip install pandas
+RUN pip install matplotlib
+RUN pip install imageio
+RUN pip install openpyxl
